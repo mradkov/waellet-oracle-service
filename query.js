@@ -20,7 +20,7 @@ function decode(data) {
 Ae({
   url: 'https://sdk-testnet.aepps.com',
   internalUrl: 'https://sdk-testnet.aepps.com',
-  compilerUrl: 'https://compiler.aepps.com',
+  compilerUrl: 'https://latest.compiler.aepps.com',
   keypair: config.client,
 }).then(ae => {
 
@@ -29,5 +29,6 @@ Ae({
   .postQueryToOracle(oracleId, 'waellet.com')
   .then(result => {
     console.log(result);
+    result.pollForResponse(2000);
   })
 })

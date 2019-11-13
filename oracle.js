@@ -7,7 +7,7 @@ const dns = require('dns');
 const setTimeoutPromise = util.promisify(setTimeout);
 
 let oracle_keypair = {
-  publicKey: process.env.PUBLIC_KEY,
+  publicKey: process.env.PUBLIC_KEY
   secretKey: process.env.SECRET_KEY
 }
 
@@ -29,7 +29,7 @@ Node.debugSwagger(false)({
 }).then(node => {
 
   Ae({
-    compilerUrl: 'https://compiler.aepps.com',
+    compilerUrl: 'https://latest.compiler.aepps.com',
     nodes: [{name: 'testnet', instance: node}],
     keypair: oracle_keypair,
   }).then(async ae => {
@@ -74,5 +74,5 @@ Node.debugSwagger(false)({
         }
       }).catch(err => console.log(err))
     }, 20000)
-}).catch(err => console.log(err))
+  }).catch(err => console.log(err))
 })

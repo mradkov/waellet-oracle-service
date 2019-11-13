@@ -7,7 +7,7 @@ const dns = require('dns');
 const setTimeoutPromise = util.promisify(setTimeout);
 
 let oracle_keypair = {
-  publicKey: process.env.PUBLIC_KEY
+  publicKey: process.env.PUBLIC_KEY,
   secretKey: process.env.SECRET_KEY
 }
 
